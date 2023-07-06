@@ -1,58 +1,36 @@
 {
     "author": "Niall Bourke",
-    "cite": "https://github.com/ANTsX/ANTs/wiki/N4BiasFieldCorrection",
+    "cite": "",
     "command": "poetry run python run.py",
-    "config": {
-        "dim": {
-            "default": 3,
-            "minimum": 2,
-            "maximum": 4,
-            "description": "Dimension",
-            "type": "integer"
-        },
-        "dist": {
-            "default": 300,
-            "minimum": 0,
-            "maximum": 1000,
-            "description": "B-spline fitting distance isotropic mesh spacing for the smoothing",
-            "type": "integer"
-        },
-        "shrink_f": {
-            "default": 1,
-            "minimum": 1,
-            "maximum": 10,
-            "description": "Shrink factor resampling for large images",
-            "type": "integer"
-        }
-    },
+    "config": {},
     "custom": {
         "gear-builder": {
-            "category": "analysis",
-            "image": "flywheel/hype-n4-bias-correction:0.0.1"
+            "category": "utility",
+            "image": "flywheel/phantom-curation:0.0.1"
         },
         "flywheel": {
             "classification": {
                 "components": [
-                    "n4-bias-correction"
+                    "pull-phantom"
                 ],
                 "keywords": [
-                    "bias correction"
+                    "curation"
                 ],
                 "modality": [
                     "MR"
                 ],
                 "type": [
-                    "nifti"
+                    "dicom"
                 ]
             },
             "suite": "UNITY Apps"
         }
     },
-    "description": "N4 Bias Field Correction.",
+    "description": "Curate Phantom scans uploaded to Flywheel",
     "inputs": {
-        "nifti-input": {
+        "dicom-input": {
             "base": "file",
-            "description": "3D isotropic image to be bias corrected"
+            "description": "FISP Phantom DICOM to trigger curation"
         },
         "api-key": {
             "base": "api-key",
@@ -70,11 +48,11 @@
         "GPG_KEY": "E3FF2839C048B25C084DEBE9B26995E310250568",
         "LANG": "C.UTF-8"
     },
-    "label": "Hyperfine: N4 Bias Correction",
+    "label": "Phantom Curation",
     "license": "MIT",
     "maintainer": "Flywheel <support@flywheel.io>",
-    "name": "hype-n4-bias-correction",
-    "source": "https://gitlab.com/flywheel-io/flywheel-apps/n4-bias-correction",
-    "url": "https://gitlab.com/flywheel-io/flywheel-apps/n4-bias-correction",
+    "name": "phantom-curation",
+    "source": "",
+    "url": "",
     "version": "0.0.1"
 }

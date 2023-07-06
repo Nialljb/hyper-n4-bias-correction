@@ -12,7 +12,7 @@ RUN poetry install --only main
 RUN pip install flywheel-gear-toolkit 
 
 COPY run.py manifest.json README.md $FLYWHEEL/
-COPY fw_gear_n4_correction $FLYWHEEL/fw_gear_n4_correction
+COPY app $FLYWHEEL/app
 RUN poetry install --only main
 
 RUN chmod a+x $FLYWHEEL/run.py

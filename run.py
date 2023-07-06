@@ -4,18 +4,14 @@ import logging
 import sys
 
 from flywheel_gear_toolkit import GearToolkitContext
-
-from fw_gear_n4_correction.main import run
-from fw_gear_n4_correction.parser import parse_config
+from app.main import find_files
 
 log = logging.getLogger(__name__)
 
 def main(context: GearToolkitContext) -> None:
     """This parses config and run."""
 
-    input_image, dim, dist, shrink_f, output_dir = parse_config(context)
-    e_code = run(input_image, dim, dist, shrink_f, output_dir)
-    sys.exit(e_code)
+    find_files()
 
 if __name__ == "__main__":
 
